@@ -1,3 +1,4 @@
+```
 <div align="center">
   <br />
     <a href="https://youtu.be/zgGhzuBZOQg" target="_blank">
@@ -18,9 +19,9 @@
     </div>
 </div>
 
-## 📋 <a name="table">Table of Contents</a>
+ ## 📋 <a name="table">Table of Contents</a>
 
-1. 🤖 [Introduction](#introduction)
+ 1. 🤖 [Introduction](#introduction)
 2. ⚙️ [Tech Stack](#tech-stack)
 3. 🔋 [Features](#features)
 4. 🤸 [Quick Start](#quick-start)
@@ -56,7 +57,7 @@ If you're getting started and need assistance or face any bugs, join our active 
 - Shadcn
 - uploadthing
 
-## <a name="features">🔋 Features</a>
+  <a name="features">🔋 Features</a>
 
 👉 **Authentication (CRUD) with Clerk:** User management through Clerk, ensuring secure and efficient authentication.
 
@@ -96,24 +97,23 @@ Make sure you have the following installed on your machine:
 
 **Cloning the Repository**
 
-```bash
+bash
 git clone https://github.com/your-username/your-project.git
 cd your-project
-```
 
 **Installation**
 
 Install the project dependencies using npm:
 
-```bash
+bash
 npm install
-```
+
 
 **Set Up Environment Variables**
 
 Create a new file named `.env` in the root of your project and add the following content:
 
-```env
+env
 #NEXT
 NEXT_PUBLIC_SERVER_URL=
 
@@ -138,15 +138,14 @@ UPLOADTHING_APP_ID=
 STRIPE_SECRET_KEY=
 STRIPE_WEBHOOK_SECRET=
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
-```
+
 
 Replace the placeholder values with your actual credentials 
 
 **Running the Project**
-
-```bash
+bash
 npm start
-```
+
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
 
@@ -155,7 +154,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 <details>
 <summary><code>globals.css</code></summary>
 
-```css
+css
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -432,13 +431,11 @@ body {
 .react-datepicker__time-list-item--selected {
   background-color: #624cf5 !important;
 }
-```
-</details>
+ </details>
 
 <details>
 <summary><code>tailwind.config.ts</code></summary>
-
-```typescript
+typescript
 /** @type {import('tailwindcss').Config} */
 import { withUt } from 'uploadthing/tw';
 
@@ -537,14 +534,14 @@ module.exports = withUt({
   },
   plugins: [require('tailwindcss-animate')],
 });
-```
 
-</details>
+
+ </details>
 
 <details>
 <summary><code>Clerk webhook</code></summary>
 
-```typescript
+typescript
 import { Webhook } from 'svix'
 import { headers } from 'next/headers'
 import { WebhookEvent } from '@clerk/nextjs/server'
@@ -651,13 +648,13 @@ export async function POST(req: Request) {
  
   return new Response('', { status: 200 })
 }
-```
+
 </details>
 
 <details>
 <summary><code>user.actions.ts</code></summary>
 
-```typescript
+typescript
 'use server'
 
 import { revalidatePath } from 'next/cache'
@@ -739,13 +736,12 @@ export async function deleteUser(clerkId: string) {
     handleError(error)
   }
 }
-```
 </details>
 
 <details>
 <summary><code>order.model.ts</code></summary>
   
-```typescript
+typescript
 import { Schema, model, models, Document } from 'mongoose'
 
 export interface IOrder extends Document {
@@ -798,14 +794,14 @@ const OrderSchema = new Schema({
 const Order = models.Order || model('Order', OrderSchema)
 
 export default Order
-```
+
 
 </details>
 
 <details>
 <summary><code>FileUploader.tsx</code></summary>
 
-```typescript
+typescript
 'use client'
 
 import { useCallback, Dispatch, SetStateAction } from 'react'
@@ -862,14 +858,13 @@ export function FileUploader({ imageUrl, onFieldChange, setFiles }: FileUploader
     </div>
   )
 }
-```
 
 </details>
 
 <details>
 <summary><code>DeleteConfirmation.tsx</code></summary>
 
-```typescript
+typescript
 'use client'
 
 import { useTransition } from 'react'
@@ -924,14 +919,14 @@ export const DeleteConfirmation = ({ eventId }: { eventId: string }) => {
     </AlertDialog>
   )
 }
-```
+
 
 </details>
 
 <details>
 <summary><code>event.action.ts</code></summary>
 
-```typescript
+typescript
 'use server'
 
 import { revalidatePath } from 'next/cache'
@@ -1105,14 +1100,14 @@ export async function getRelatedEventsByCategory({
     handleError(error)
   }
 }
-```
+
 
 </details>
 
 <details>
 <summary><code>order.action.ts</code></summary>
 
-```typescript
+typescript
 "use server"
 
 import Stripe from 'stripe';
@@ -1260,15 +1255,12 @@ export async function getOrdersByUser({ userId, limit = 3, page }: GetOrdersByUs
   } catch (error) {
     handleError(error)
   }
-}
-```
-
-</details>
+}</details>
 
 <details>
 <summary><code>orders/page.tsx</code></summary>
 
-```typescript
+typescript
 import Search  from '@/components/shared/Search'
 import { getOrdersByEvent } from '@/lib/actions/order.actions'
 import { formatDateTime, formatPrice } from '@/lib/utils'
@@ -1338,7 +1330,7 @@ const Orders = async ({ searchParams }: SearchParamProps) => {
 }
 
 export default Orders
-```
+
 
 </details>
 
@@ -1366,5 +1358,3 @@ And if you're hungry for more than just a course and want to understand how we l
 <a href="https://www.jsmastery.pro/masterclass" target="_blank">
 <img src="https://github.com/sujatagunale/EasyRead/assets/151519281/fed352ad-f27b-400d-9b8f-c7fe628acb84" alt="Project Banner">
 </a>
-
-#
